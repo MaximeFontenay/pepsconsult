@@ -1,0 +1,44 @@
+---
+import '@astrojs/tailwind/base.css'
+import '../assets/scss/globals.scss'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+
+const {
+  title = `Pep's consult`,
+  subtitle = `Pep's consult`,
+  description = `Pep's consult, formation et coaching pour les entreprises et les particuliers`,
+  url = 'https://www.pepconsult.fr',
+  image = '/social-preview-image.png',
+  author = 'Maxime Fontenay',
+} = Astro.props
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta name="title" content={`${title} - ${subtitle}`} />
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
+
+    <meta property="og:title" content={`${title} - ${subtitle}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={Astro.site ? `${Astro.site}${image}` : image} />
+
+    <title>{title} - {subtitle}</title>
+  </head>
+  <body>
+    <Header />
+    <main transition:animate="fade">
+      <slot />
+    </main>
+    <Footer />
+    <style lang="scss" is:global></style>
+  </body>
+</html>
