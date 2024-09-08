@@ -1,0 +1,27 @@
+---
+const { text, href, size = 'md', variant = 'primary', ...attributes } = Astro.props
+
+const sizeClasses = {
+  sm: 'text-base',
+  md: 'text-lg',
+}
+
+const variantClasses = {
+  primary: 'bg-primary text-white hover:bg-primary focus:ring-primary',
+  secondary: 'bg-secondary text-white hover:bg-secondary focus:ring-secondary',
+}
+
+const buttonClasses = `${sizeClasses[size]} ${variantClasses[variant]} flx-center gap-3 rounded-lg px-6 py-2 focus:outline-none focus:ring-2 focus:ring-offset-2`
+---
+
+{
+  href ? (
+    <a href={href} class={`${buttonClasses} ${attributes.class || ''}`} {...attributes}>
+      {text}
+    </a>
+  ) : (
+    <button class={`${buttonClasses} ${attributes.class || ''}`} {...attributes}>
+      {text}
+    </button>
+  )
+}

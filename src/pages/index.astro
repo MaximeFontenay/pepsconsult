@@ -1,11 +1,14 @@
 ---
+import ButtonMain from '../components/ButtonMain.astro'
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 ---
 
 <DefaultLayout title="Home">
-  <section class="container my-12">
-    <h1>Pep’s Consult</h1>
-    <p>Une solution à tout vos problèmes de formations !</p>
-    <a href="/services">Nos services</a>
+  <section class="container my-12 flex flex-col items-center justify-center">
+    <h1 class="mb-6 text-2xl font-bold lg:text-3xl xl:text-4xl">Pep’s Consult</h1>
+    <p class="text-center text-base font-medium lg:text-lg">
+      Votre <span class="text-primary">réussite</span> commence ici, des formations sur mesure pour chaque ambition.
+    </p>
+    <ButtonMain text="Prendre rendez-vous" href="/contact" class="mt-10" />
   </section>
 </DefaultLayout>

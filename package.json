@@ -11,13 +11,13 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^2.3.1",
-    "@astrojs/partytown": "^2.1.1",
+    "@astrojs/mdx": "^3.1.5",
+    "@astrojs/partytown": "^2.1.2",
     "@astrojs/tailwind": "^5.1.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "accessible-astro-components": "^2.3.6",
-    "astro": "^4.14.0",
+    "astro": "^4.15.1",
     "astro-compress": "^2.3.1",
     "eslint": "^8.57.0",
     "eslint-plugin-astro": "^0.23.0",

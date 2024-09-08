@@ -1,8 +1,11 @@
 ---
+import { Image } from 'astro:assets'
+import logo from '../assets/img/logo.png'
 ---
 
 <header>
-  <nav class="flx-center mx-auto w-fit gap-4 py-8 font-semibold">
+  <Image src={logo} alt="Logo Pep's Consult" fetchpriority={'high'} quality={'max'} />
+  <nav class="md:flx-center mx-auto hidden w-fit gap-4 py-8 font-semibold">
     <a href="/">Accueil</a>
     <a href="/services">Nos services</a>
     <a href="/nada">Qui suis-je ?</a>
