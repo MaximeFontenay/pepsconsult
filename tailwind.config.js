@@ -7,6 +7,7 @@ module.exports = {
         xs: '14px',
         sm: '16px',
         base: '18px',
+        md: '20px',
         lg: '24px',
         xl: '32px',
         '2xl': '36px',
@@ -17,6 +18,7 @@ module.exports = {
         primary: '#0089DC',
         secondary: '#F5D70E',
         tertiary: '#5D5AFE',
+        light: '#F2F2F2',
       },
       fontFamily: {
         satoshi: ['Satoshi', 'Poppins', 'sans-serif'],

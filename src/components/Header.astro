@@ -1,16 +1,120 @@
 ---
 import { Image } from 'astro:assets'
-import logo from '../assets/img/logo.png'
+import logo from '../assets/images/logo.png'
+import MobileWaves from '../components/waves/wavesMobile.astro'
 ---
 
-<header>
-  <Image src={logo} alt="Logo Pep's Consult" fetchpriority={'high'} quality={'max'} />
-  <nav class="md:flx-center mx-auto hidden w-fit gap-4 py-8 font-semibold">
-    <a href="/">Accueil</a>
-    <a href="/services">Nos services</a>
-    <a href="/nada">Qui suis-je ?</a>
-    <a href="/contact">Contact</a>
+<script type="module">
+  const menuToggle = document.getElementById('menu-toggle')
+  const menuOpenIcon = document.getElementById('menu-open-icon')
+  const menuCloseIcon = document.getElementById('menu-close-icon')
+
+  const toggleMenu = () => {
+    console.log('menu')
+    const menu = document.getElementById('mobile-menu')
+
+    menu.classList.toggle('menu-open')
+
+    menuOpenIcon.classList.toggle('hidden')
+    menuCloseIcon.classList.toggle('hidden')
+  }
+  menuToggle.addEventListener('click', toggleMenu)
+
+  const links = document.querySelectorAll('a.menu-item')
+  const currentPath = window.location.pathname
+  links.forEach((link) => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('active')
+    } else {
+      link.classList.remove('active')
+    }
+  })
+</script>
+
+<header class="container flex items-center justify-between pt-4">
+  <Image
+    class="max-w-[125px]"
+    src={logo}
+    alt="Logo Pep's Consult"
+    fetchpriority={'high'}
+    quality={'max'}
+    draggable="false"
+  />
+  <nav class="hidden w-fit items-center justify-end gap-4 py-8 font-semibold md:flex">
+    <a href="/" class="menu-item">Accueil</a>
+    <a href="/services" class="menu-item">Nos services</a>
+    <a href="/formations" class="menu-item">Formations</a>
+    <a href="/nada" class="menu-item">Qui suis-je</a>
+    <a href="/contact" class="menu-item">Contact</a>
+  </nav>
+
+  <button id="menu-toggle" class="fixed right-4 top-4 z-50 rounded-md p-2 sm:right-10 md:hidden">
+    <svg id="menu-open-icon" width="30" height="28" viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="15" height="8" rx="3" fill="#0089DC"></rect>
+      <rect y="10" width="30" height="8" rx="3" fill="#0089DC"></rect>
+      <rect x="15" y="20" width="15" height="8" rx="3" fill="#0089DC"></rect>
+    </svg>
+
+    <svg
+      id="menu-close-icon"
+      class="hidden"
+      width="30"
+      height="28"
+      viewBox="0 0 30 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect x="6.65625" width="16" height="8" rx="3" transform="rotate(45 6.65625 0)" fill="#0089DC"></rect>
+      <rect x="1.56445" y="21.7782" width="30" height="8" rx="3" transform="rotate(-45 1.56445 21.7782)" fill="#0089DC"
+      ></rect>
+      <rect x="18.6562" y="11" width="16" height="8" rx="3" transform="rotate(45 18.6562 11)" fill="#0089DC"></rect>
+    </svg>
+  </button>
+
+  <!-- style="transform: none; opacity: 1; pointer-events: auto;" -->
+  <nav
+    id="mobile-menu"
+    class="fixed inset-0 z-40 flex-col items-center justify-center space-y-8 bg-white text-2xl text-black transition-all"
+  >
+    <ul
+      class="mx-auto flex h-full w-fit -translate-y-12 list-none flex-col justify-center gap-4 text-center text-lg font-medium"
+    >
+      <li class="mb-12">
+        <a href="/">
+          <Image class="max-w-[220px]" src={logo} alt="Logo Pep's Consult" quality={'max'} draggable="false" />
+        </a>
+      </li>
+      <li><a href="/" class="menu-item block px-4 py-2 hover:text-secondary">Accueil</a></li>
+      <li><a href="/services" class="menu-item block px-4 py-2 hover:text-secondary">Services</a></li>
+      <li><a href="/formations" class="menu-item block px-4 py-2 hover:text-secondary">Formations</a></li>
+      <li><a href="/nada" class="menu-item block px-4 py-2 hover:text-secondary">À propos</a></li>
+      <li><a href="/contact" class="menu-item block px-4 py-2 hover:text-secondary">Contact</a></li>
+
+      <div class="pointer-events-none absolute top-1/4 z-50 m-auto w-[180vw] max-w-none -translate-x-1/4">
+        <MobileWaves />
+      </div>
+    </ul>
+
+    <style lang="scss">
+      #mobile-menu {
+        transform: translateX(-20%);
+        opacity: 0;
+        pointer-events: none;
+
+        &.menu-open {
+          transform: translateX(0);
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+
+      .menu-item {
+        transition: color 0.3s;
+
+        &.active {
+          @apply pointer-events-none text-primary;
+        }
+      }
+    </style>
   </nav>
 </header>
-
-<style lang="scss" is:global></style>

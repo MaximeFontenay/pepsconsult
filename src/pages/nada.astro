@@ -1,7 +1,30 @@
 ---
+import { Image } from 'astro:assets'
+import illustration from '../assets/images/about/illustration.png'
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 ---
 
-<DefaultLayout title="404">
-  <section class="container my-12"><h1>About</h1></section>
+<DefaultLayout title="Nada Bitar">
+  <section class="container relative my-12 flex flex-col items-center justify-center">
+    <h1 class="mb-10 w-full text-lg font-bold md:mb-6 md:text-2xl">Qui suis-je ?</h1>
+
+    <div class="flex w-full items-start justify-between gap-6 max-lg:flex-col">
+      <p class="text-base">
+        Passionnée par l'art de transmettre et de transformer les compétences, je suis Nada Bitar, spécialiste en
+        formation, coaching, et ingénierie de formation. Avec une solide expérience dans la formation de formateurs et
+        le reformatage de parcours pédagogiques, j'accompagne les professionnels et les organisations dans
+        l'optimisation de leurs pratiques éducatives.
+        <br /><br />
+        Mes missions ? Mettre en place des stratégies innovantes qui allient ludopédagogie et outils pédagogiques interactifs
+        pour rendre l'apprentissage plus engageant et efficace. Que vous souhaitiez développer vos compétences, améliorer
+        votre offre de formation, ou concevoir des programmes sur mesure, je suis là pour vous guider avec une approche personnalisée
+        et centrée sur vos objectifs.
+        <br />
+        Ensemble, donnons un nouveau souffle à la formation pour qu'elle devienne un véritable levier de réussite et d'épanouissement.
+      </p>
+      <h2 class="text-md font-bold lg:hidden">Nada Bitar, Formatrice</h2>
+      <Image src={illustration} alt="Nada Bitar illustration" class="w-full lg:max-w-[522px]" draggable="false" />
+    </div>
+    <h2 class="mt-10 w-full text-left text-md font-bold max-lg:hidden">Nada Bitar, Formatrice</h2>
+  </section>
 </DefaultLayout>

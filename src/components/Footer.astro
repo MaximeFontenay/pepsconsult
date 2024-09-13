@@ -1,10 +1,53 @@
 ---
+import { Image } from 'astro:assets'
+import emailIcon from '../assets/images/icons/email.svg'
+import linkedinIcon from '../assets/images/icons/linkedin.svg'
+import whatsappIcon from '../assets/images/icons/whatsapp.svg'
 ---
 
-<footer>
-  <section class="py-8">
-    <div class="container">
-      <p>footer</p>
+<script type="module">
+  const backTop = document.querySelector('.back-top')
+  backTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  })
+</script>
+
+<footer class="container mt-auto flex flex-col items-stretch gap-4 pb-10 md:gap-10">
+  <button type="button" class="back-top flx-center ml-auto size-14 rounded-2xl bg-primary">
+    <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M13.0607 1.33617C12.4749 0.750383 11.5251 0.750383 10.9393 1.33617L1.3934 10.8821C0.807614 11.4679 0.807614 12.4176 1.3934 13.0034C1.97919 13.5892 2.92893 13.5892 3.51472 13.0034L12 4.51815L20.4853 13.0034C21.0711 13.5892 22.0208 13.5892 22.6066 13.0034C23.1924 12.4176 23.1924 11.4679 22.6066 10.8821L13.0607 1.33617ZM13.5 27.8086L13.5 2.39683L10.5 2.39683L10.5 27.8086L13.5 27.8086Z"
+        fill="#F2F2F2"></path>
+    </svg>
+  </button>
+  <section class="lg:px-18 rounded-2xl bg-primary px-6 py-8 text-white xl:px-24">
+    <div class="flex justify-between gap-4 lg:items-center">
+      <h2 class="text-xl font-bold leading-10 xl:text-3xl">Pep’s Consult</h2>
+      <div class="flex items-center justify-end gap-3 max-lg:flex-col lg:gap-6">
+        <a href="https://www.linkedin.com/in/nada-bitar-049300a8/" class="duration-150 hover:opacity-85">
+          <Image class="max-w-[125px]" src={linkedinIcon} alt="Icon linkedin" draggable="false" />
+        </a>
+        <a href="https://wa.me/+33607981624" target="_blank" class="duration-150 hover:opacity-85">
+          <Image class="max-w-[125px]" src={whatsappIcon} alt="Icon linkedin" draggable="false" />
+        </a>
+        <a href="mailto:nada.bitar@pepsconsult.fr" class="duration-150 hover:opacity-85">
+          <Image class="max-w-[125px]" src={emailIcon} alt="Icon linkedin" draggable="false" />
+        </a>
+      </div>
     </div>
+    <ol class="mt-3 text-base md:mt-6 md:text-lg">
+      <li>Nada Bitar</li>
+      <li>nada.bitar@pepsconsult.fr</li>
+      <li>06 07 98 16 24</li>
+    </ol>
+  </section>
+  <section class="lg:px-18 rounded-2xl bg-primary px-6 py-6 text-white xl:px-24">
+    <nav>
+      <ul class="flex items-center justify-between gap-2 text-base max-lg:flex-col md:gap-4">
+        <li><a href="/mentions-legales" class="duration-150 hover:opacity-85">Mentions legales</a></li>
+        <li><a href="/privacy" class="duration-150 hover:opacity-85">Politique de confidentialité</a></li>
+        <li><a href="/faq" class="duration-150 hover:opacity-85">FAQ</a></li>
+      </ul>
+    </nav>
   </section>
 </footer>
