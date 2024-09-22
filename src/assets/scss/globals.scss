@@ -8,6 +8,10 @@
   @apply flex items-center justify-center;
 }
 
+:root {
+  --primary-light: #17a6ff2f;
+}
+
 h1,
 h2,
 h3,
@@ -18,7 +22,7 @@ h6 {
 }
 
 :where(img) {
-  @apply block h-auto w-full max-w-full object-contain;
+  @apply block h-auto w-full max-w-full select-none object-contain;
 }
 
 // custom scrollbar
@@ -36,6 +40,14 @@ html {
   &::-webkit-scrollbar-thumb {
     border-radius: 99px;
   }
+}
+
+::-moz-selection {
+  background: var(--primary-light);
+}
+
+::selection {
+  background: var(--primary-light);
 }
 
 p {
