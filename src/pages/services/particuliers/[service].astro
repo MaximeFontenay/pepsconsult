@@ -1,0 +1,133 @@
+---
+import IlluBilanOrientation from '../../../assets/images/services/bilan-orientation.svg'
+import IlluCoaching from '../../../assets/images/services/coaching.svg'
+import IlluPrendreLaParole from '../../../assets/images/services/prendre-la-parole.svg'
+import IlluPreparationRetourEmploi from '../../../assets/images/services/preparation-retour-emploi.svg'
+import IlluTransmettreSonSavoir from '../../../assets/images/services/transmettre-savoir.svg'
+import DefaultLayout from '../../../layouts/DefaultLayout.astro'
+
+const services = {
+  coaching: {
+    title: 'Coaching',
+    description: `
+      <p>
+      Dans un monde en constante évolution, il est crucial de se démarquer, que ce soit pour trouver un emploi, évoluer dans sa carrière, ou simplement pour regagner confiance en soi. Mon service de coaching personnalisé est conçu pour vous accompagner dans ces défis avec des solutions adaptées à vos besoins spécifiques.
+      <br><br>
+      <b>Ce que je propose :</b>
+      </p>
+      <br>
+      <ul>
+        <li>Renforcement de l'Estime de Soi : Identifiez et surmontez les obstacles qui freinent votre épanouissement personnel et professionnel. Ensemble, nous développerons une confiance solide pour que vous puissiez aborder vos projets avec assurance.</li>
+        <li>Création et Optimisation de CV : Un CV bien conçu est la clé pour attirer l'attention des recruteurs. Je vous aide à mettre en avant vos compétences, votre expérience et votre valeur ajoutée de manière claire et impactante.</li>
+        <li>Préparation aux Entretiens : Que ce soit pour un nouvel emploi ou une évolution de carrière, je vous prépare aux entretiens en vous fournissant des outils et des techniques pour vous présenter de manière authentique et convaincante.</li>
+      </ul>
+      <br>
+      <p>
+      <b>Pourquoi choisir mon coaching ?</b>
+      <br><br>
+      Je crois fermement en l'unicité de chaque individu. Mon approche est centrée sur l'écoute, l'empathie, et une véritable volonté de vous voir réussir. Mon objectif est de vous fournir les clés pour vous épanouir tant sur le plan personnel que professionnel.
+      Soyez acteur de votre réussite, et laissez-moi vous accompagner sur ce chemin. Contactez-moi pour un premier échange gratuit et découvrons ensemble comment atteindre vos objectifs.
+      </p>
+    `,
+    image: IlluCoaching.src,
+  },
+  'preparation-retour-emploi': {
+    title: 'Préparation au retour à l’emploi',
+    description: `
+      <p>
+      La transition professionnelle peut être une période stressante, mais elle est aussi l'opportunité de se réinventer. 
+      <br><br>
+      Mon accompagnement en préparation au retour à l'emploi vous offre un soutien complet et personnalisé pour chaque étape de votre recherche. Ensemble, nous travaillerons sur la valorisation de vos compétences, l’optimisation de votre CV et de votre lettre de motivation, ainsi que sur la préparation d’entretiens réussis. Je vous aide à identifier vos forces, à surmonter vos doutes, et à élaborer une stratégie ciblée pour atteindre vos objectifs professionnels.
+      <br><br>
+      Avec des outils et des conseils adaptés, vous serez prêt à faire face au marché du travail avec assurance et détermination.
+      </p>
+    `,
+    image: IlluPreparationRetourEmploi.src,
+  },
+  'prendre-la-parole': {
+    title: 'Prendre la parole',
+    description: `
+      <p>
+      Prendre la parole en public est une compétence essentielle dans le monde professionnel, mais elle peut souvent générer du stress et de l’appréhension. 
+      <br><br>
+      Mon programme de coaching en prise de parole est conçu pour vous aider à surmonter ces défis et à développer une présence confiante et impactante. Grâce à des techniques de communication, des exercices de mise en situation et un accompagnement personnalisé, vous apprendrez à structurer vos messages, à gérer votre stress et à captiver votre audience. 
+      <br><br>
+      Que ce soit pour des présentations, des réunions ou des interventions en public, je vous guide pour que vous puissiez exprimer vos idées avec clarté, conviction et charisme.
+      </p>
+    `,
+    image: IlluPrendreLaParole.src,
+  },
+  'bilan-orientation': {
+    title: "Bilan d'orientation",
+    description: `
+      <p>
+        Le bilan d'orientation est une étape clé pour ceux qui souhaitent réfléchir à leur parcours, explorer de nouvelles voies ou simplement faire un point sur leur carrière actuelle. 
+        <br><br>
+        Ce programme d’accompagnement vous offre un espace pour explorer vos compétences, vos motivations et vos aspirations professionnelles. À travers une série d'entretiens, d'exercices de réflexion et d'outils d’évaluation, je vous aide à clarifier vos objectifs et à élaborer un plan d’action concret et réaliste pour votre avenir professionnel. 
+        <br><br>
+        Que vous envisagiez une reconversion, une évolution de poste ou un retour sur le marché du travail, je suis là pour vous guider dans cette démarche, avec une approche bienveillante et sur mesure.
+      </p>
+    `,
+    image: IlluBilanOrientation.src,
+  },
+  'transmettre-son-savoir': {
+    title: 'Transmettre son savoir',
+    description: `
+      <p>
+        Transmettre son savoir est un défi passionnant, mais cela demande plus que des connaissances techniques. Il s'agit d'engager, d'inspirer et de rendre l'apprentissage accessible à tous. 
+        <br><br>
+        Mon accompagnement pour les formateurs vous offre les clés pour structurer et animer vos formations avec succès. Nous travaillerons sur des techniques pédagogiques modernes, incluant la ludopédagogie et des outils interactifs, pour rendre vos sessions dynamiques et captivantes. Que vous débutiez en tant que formateur ou que vous souhaitiez affiner vos compétences, je vous aide à développer une approche pédagogique qui valorise vos savoirs et suscite l’engagement de vos apprenants. 
+        <br><br>
+        Devenez le formateur que vous avez toujours voulu être, et faites de chaque session une expérience enrichissante pour tous.
+      </p>
+    `,
+    image: IlluTransmettreSonSavoir.src,
+  },
+}
+
+export function getStaticPaths() {
+  return [
+    { params: { service: 'coaching' } },
+    { params: { service: 'preparation-retour-emploi' } },
+    { params: { service: 'prendre-la-parole' } },
+    { params: { service: 'bilan-orientation' } },
+    { params: { service: 'transmettre-son-savoir' } },
+  ]
+}
+
+const { service } = Astro.params
+
+const serviceData = services[service]
+
+if (!serviceData) {
+  throw new Error('404: Service not found')
+}
+
+const { title, description, image } = serviceData
+---
+
+<DefaultLayout title={title}>
+  <section class="services-page container my-12">
+    <div class="flex gap-14 max-lg:flex-col">
+      <div class="flex flex-col gap-4 lg:gap-14">
+        <a href="/services/particuliers" class="size-6 lg:size-10">
+          <svg
+            class="size-full"
+            width="43"
+            height="38"
+            viewBox="0 0 43 38"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.23223 17.2322C0.255922 18.2085 0.255922 19.7915 1.23223 20.7678L17.1421 36.6777C18.1184 37.654 19.7014 37.654 20.6777 36.6777C21.654 35.7014 21.654 34.1184 20.6777 33.1421L6.53553 19L20.6777 4.85786C21.654 3.88155 21.654 2.29864 20.6777 1.32233C19.7014 0.346017 18.1184 0.346017 17.1421 1.32233L1.23223 17.2322ZM43 16.5L3 16.5L3 21.5L43 21.5L43 16.5Z"
+              fill="#0089DC"></path>
+          </svg>
+        </a>
+        <h1 class="text-lg font-bold text-primary lg:text-2xl">{title}</h1>
+        <div set:html={description} />
+      </div>
+      <img src={image} alt={'Illustration ' + title} class="my-6 max-h-[400px] max-lg:max-h-96" />
+    </div>
+  </section>
+</DefaultLayout>

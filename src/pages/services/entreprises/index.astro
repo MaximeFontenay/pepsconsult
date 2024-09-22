@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets'
+import IconBrain from '../../../assets/images/services/cerveau.png'
+import IconDiscuss from '../../../assets/images/services/discussion.png'
+import IconMeca from '../../../assets/images/services/engrenage.png'
+import IconBook from '../../../assets/images/services/livre-ouvert.png'
+import DefaultLayout from '../../../layouts/DefaultLayout.astro'
+
+const cards = [
+  {
+    title: 'Mise à niveau',
+    description:
+      'Renforcez et actualisez vos compétences avec des formations ciblées, conçues pour répondre aux exigences actuelles et booster votre performance.',
+    icon: IconBook,
+    link: '/services/entreprises/mise-a-niveau',
+  },
+  {
+    title: 'Ingénierie formation',
+    description:
+      'Conception sur mesure de parcours pédagogiques innovants, adaptés à vos besoins, pour maximiser l’impact et la performance de vos formations.',
+    icon: IconMeca,
+    link: '/services/entreprises/ingenierie-formation',
+  },
+  {
+    title: 'Formation formateur',
+    description:
+      'Développez vos compétences en transmission grâce à des méthodes pédagogiques sur mesure, conçues pour engager et inspirer vos apprenants.',
+    icon: IconDiscuss,
+    link: '/services/entreprises/formation-formateur',
+  },
+  {
+    title: 'Création de formation',
+    description:
+      'Concevez des parcours pédagogiques sur mesure, innovants et engageants, pour maximiser l’impact de vos formations.',
+    icon: IconBrain,
+    link: '/services/entreprises/creation-de-formation',
+  },
+]
+---
+
+<DefaultLayout title="Services pour les entreprises">
+  <section class="container my-12">
+    <h1 class="text-lg font-bold text-primary lg:text-2xl">Nos services pour les entreprises&nbsp;:</h1>
+
+    <div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 xl:mt-16 xl:grid-cols-3">
+      {
+        cards.map((card) => (
+          <a
+            href={card.link}
+            class="flex flex-col items-center gap-3 rounded-2xl border border-primary p-6 text-center lg:gap-6"
+          >
+            <Image class="size-14 lg:size-20" src={card.icon} alt={card.title} draggable="false" />
+            <h2 class="text-md font-bold text-primary lg:text-lg">{card.title}</h2>
+            <p>{card.description}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</DefaultLayout>

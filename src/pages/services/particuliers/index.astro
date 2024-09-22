@@ -1,0 +1,67 @@
+---
+import { Image } from 'astro:assets'
+import IconBulb from '../../../assets/images/services/ampoule.png'
+import IconBrain from '../../../assets/images/services/cerveau.png'
+import IconDiscuss from '../../../assets/images/services/discussion.png'
+import IconBook from '../../../assets/images/services/livre-ouvert.png'
+import DefaultLayout from '../../../layouts/DefaultLayout.astro'
+
+const cards = [
+  {
+    title: 'Coaching',
+    description:
+      'Renforcez votre estime de soi, optimisez votre CV, et atteignez vos objectifs professionnels grâce à un accompagnement sur mesure. Ensemble, libérons votre plein potentiel.',
+    icon: IconDiscuss,
+    link: '/services/particuliers/coaching',
+  },
+  {
+    title: 'Preparation retour à l’emploi',
+    description:
+      'Boostez votre retour à l’emploi avec un accompagnement sur mesure pour valoriser vos compétences et décrocher le poste idéal.',
+    icon: IconBulb,
+    link: '/services/particuliers/preparation-retour-emploi',
+  },
+  {
+    title: 'Prendre la parole',
+    description:
+      'Gagnez en aisance et impact à l’oral grâce à des techniques éprouvées pour prendre la parole avec confiance.',
+    icon: IconDiscuss,
+    link: '/services/particuliers/prendre-la-parole',
+  },
+  {
+    title: 'Bilan d’orientation',
+    description:
+      'Faites le point sur vos compétences et définissez votre projet professionnel pour donner un nouvel élan à votre carrière.',
+    icon: IconBook,
+    link: '/services/particuliers/bilan-orientation',
+  },
+  {
+    title: 'Transmettre son savoir',
+    description:
+      'Apprenez à partager vos connaissances de manière efficace et engageante pour inspirer et former vos apprenants.',
+    icon: IconBrain,
+    link: '/services/particuliers/transmettre-son-savoir',
+  },
+]
+---
+
+<DefaultLayout title="Services pour les particuliers">
+  <section class="container my-12">
+    <h1 class="text-lg font-bold text-primary lg:text-2xl">Nos services pour les particuliers&nbsp;:</h1>
+
+    <div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 xl:mt-16 xl:grid-cols-3">
+      {
+        cards.map((card) => (
+          <a
+            href={card.link}
+            class="flex flex-col items-center gap-3 rounded-2xl border border-primary p-6 text-center lg:gap-6"
+          >
+            <Image class="size-14 lg:size-20" src={card.icon} alt={card.title} draggable="false" />
+            <h2 class="text-md font-bold text-primary lg:text-lg">{card.title}</h2>
+            <p>{card.description}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</DefaultLayout>

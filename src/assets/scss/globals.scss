@@ -20,3 +20,37 @@ h6 {
 :where(img) {
   @apply block h-auto w-full max-w-full object-contain;
 }
+
+// custom scrollbar
+html {
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) transparent;
+  scrollbar-gutter: stable;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    background-color: var(--color-primary);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+  }
+}
+
+p {
+  @apply text-xs md:text-base;
+}
+
+img {
+  @apply text-xs font-extralight italic text-gray-400;
+}
+
+.services-page {
+  ul {
+    @apply list-disc pl-8;
+  }
+  b {
+    @apply font-medium;
+  }
+}

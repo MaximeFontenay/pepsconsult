@@ -1,0 +1,109 @@
+---
+import IlluCreationFormation from '../../../assets/images/services/creation-formation.svg'
+import IlluFormationFormateur from '../../../assets/images/services/formation-formateur.svg'
+import IlluIngenieurieFormation from '../../../assets/images/services/ingenierie-formation.svg'
+import IlluMiseANiveau from '../../../assets/images/services/mise-a-niveau.svg'
+import DefaultLayout from '../../../layouts/DefaultLayout.astro'
+
+const services = {
+  'mise-a-niveau': {
+    title: 'Nos mises à niveaux',
+    description: `
+      <p>
+        Experte en ingénierie de formation avec une spécialisation dans la mise à niveau des compétences. Mon rôle est de concevoir des parcours pédagogiques sur mesure qui permettent aux professionnels de renforcer ou d'actualiser leurs connaissances de manière ciblée et efficace.
+        <br><br>
+        Grâce à une approche innovante intégrant la ludopédagogie et des outils pédagogiques interactifs, j'accompagne les individus et les équipes dans leur montée en compétence. Que vous cherchiez à remettre à niveau un groupe ou à adapter un programme pour répondre aux nouveaux défis du marché, je vous propose des solutions adaptées à vos besoins spécifiques.
+        <br><br>
+        Avec une expertise en reformatage de formations existantes et en création de nouveaux modules, je m'engage à transformer la mise à niveau en une opportunité de croissance et de succès pour vous et vos collaborateurs.
+      </p>
+    `,
+    image: IlluMiseANiveau.src,
+  },
+  'ingenierie-formation': {
+    title: 'Ingénierie formation',
+    description: `
+      <p>
+        Spécialiste en ingénierie de formation dédiée à l'optimisation et à l'innovation des processus pédagogiques. Mon expertise réside dans la conception et le développement de parcours de formation sur mesure, adaptés aux besoins spécifiques des organisations et des apprenants.
+        <br><br>
+        Avec une approche centrée sur l’efficacité et l'engagement, j'intègre des méthodes comme la ludopédagogie et les outils pédagogiques interactifs pour créer des expériences d'apprentissage captivantes. Que vous ayez besoin de reformater vos formations existantes ou de développer de nouveaux programmes, je vous accompagne dans chaque étape, de l'analyse des besoins à l'évaluation des résultats.
+        <br><br>
+        Mon objectif : transformer vos formations en leviers de performance et d'innovation, tout en répondant aux exigences du monde professionnel actuel.
+      </p>
+    `,
+    image: IlluIngenieurieFormation.src,
+  },
+  'formation-formateur': {
+    title: 'Formation formateur',
+    description: `
+      <p>
+        Experte en formation de formateurs et passionnée par la transmission des savoirs. Forte d’une expérience riche en ingénierie de formation, j'accompagne les professionnels dans l'art de former efficacement, en concevant des parcours pédagogiques sur mesure et innovants.
+        <br><br>
+        Mon approche combine des méthodes éprouvées avec les dernières tendances en ludopédagogie et outils pédagogiques interactifs pour rendre l'apprentissage à la fois dynamique et impactant. Que ce soit pour un reformatage de vos formations existantes ou la création de nouvelles, je mets à votre disposition mon expertise pour transformer vos formations en expériences engageantes et mémorables.
+        <br><br>
+        Avec moi, formez les formateurs de demain, capables de transmettre avec passion et efficacité.
+      </p>
+    `,
+    image: IlluFormationFormateur.src,
+  },
+  'creation-de-formation': {
+    title: 'Création de formation',
+    description: `
+      <p>
+        Spécialisée en ingénierie de formation et en création de formations sur mesure. Mon objectif est de transformer vos idées et besoins en parcours pédagogiques engageants et efficaces, qui répondent parfaitement aux attentes de vos apprenants et de votre entreprise.
+        <br><br>
+        Que vous souhaitiez développer des modules de formation complets ou reformater des contenus existants, j’utilise des approches innovantes telles que la ludopédagogie et les outils pédagogiques interactifs pour créer des expériences d’apprentissage captivantes. Mon expertise couvre la formation de formateurs, la mise à niveau des compétences, et l’optimisation de programmes pédagogiques.
+        <br><br>
+        Je m’adapte à chaque projet, que vous ayez déjà un contenu précis ou non. En effet, je peux également écrire une formation en partant des informations et des connaissances apportées par votre entreprise, sans nécessairement maîtriser le sujet initial. Cela me permet de vous offrir des solutions de formation sur mesure, parfaitement alignées avec vos objectifs stratégiques et pédagogiques.
+        <br><br>
+        En choisissant de collaborer avec moi, vous bénéficiez d’un accompagnement personnalisé, axé sur l’innovation et l’efficacité, pour faire de vos formations un véritable levier de succès et de performance.
+      </p>
+    `,
+    image: IlluCreationFormation.src,
+  },
+}
+
+export function getStaticPaths() {
+  return [
+    { params: { service: 'mise-a-niveau' } },
+    { params: { service: 'ingenierie-formation' } },
+    { params: { service: 'formation-formateur' } },
+    { params: { service: 'creation-de-formation' } },
+  ]
+}
+
+const { service } = Astro.params
+
+const serviceData = services[service]
+
+if (!serviceData) {
+  throw new Error('404: Service not found')
+}
+
+const { title, description, image } = serviceData
+---
+
+<DefaultLayout title={title}>
+  <section class="services-page container my-12">
+    <div class="flex gap-14 max-lg:flex-col">
+      <div class="flex flex-col gap-4 lg:gap-14">
+        <a href="/services/entreprises" class="size-6 lg:size-10">
+          <svg
+            class="size-full"
+            width="43"
+            height="38"
+            viewBox="0 0 43 38"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.23223 17.2322C0.255922 18.2085 0.255922 19.7915 1.23223 20.7678L17.1421 36.6777C18.1184 37.654 19.7014 37.654 20.6777 36.6777C21.654 35.7014 21.654 34.1184 20.6777 33.1421L6.53553 19L20.6777 4.85786C21.654 3.88155 21.654 2.29864 20.6777 1.32233C19.7014 0.346017 18.1184 0.346017 17.1421 1.32233L1.23223 17.2322ZM43 16.5L3 16.5L3 21.5L43 21.5L43 16.5Z"
+              fill="#0089DC"></path>
+          </svg>
+        </a>
+        <h1 class="text-lg font-bold text-primary lg:text-2xl">{title}</h1>
+        <div set:html={description} />
+      </div>
+      <img src={image} alt={'Illustration ' + title} class="my-6 max-lg:max-h-96" />
+    </div>
+  </section>
+</DefaultLayout>
