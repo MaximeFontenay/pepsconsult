@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@astrojs/vue": "^4.5.1",
+    "@lottiefiles/dotlottie-vue": "^0.4.15",
     "vue": "^3.5.8"
   }
 }
