@@ -3,6 +3,7 @@ import { Image } from 'astro:assets'
 import emailIcon from '../assets/images/icons/email.svg'
 import linkedinIcon from '../assets/images/icons/linkedin.svg'
 import whatsappIcon from '../assets/images/icons/whatsapp.svg'
+import * as globals from '../globals'
 ---
 
 <script type="module">
@@ -37,8 +38,8 @@ import whatsappIcon from '../assets/images/icons/whatsapp.svg'
     </div>
     <ol class="mt-3 text-base md:mt-6 md:text-lg">
       <li>Nada Bitar</li>
-      <li>nada.bitar@pepsconsult.fr</li>
-      <li>06 07 98 16 24</li>
+      <li>{globals.email}</li>
+      <li>{globals.phone}</li>
     </ol>
   </section>
   <section class="lg:px-18 rounded-2xl bg-primary px-6 py-6 text-white xl:px-24">

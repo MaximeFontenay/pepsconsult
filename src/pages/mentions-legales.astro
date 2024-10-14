@@ -1,28 +1,91 @@
 ---
+import * as globals from '../globals'
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 ---
 
 <DefaultLayout title="Mentions légales">
   <section class="my-12">
-    <div class="container text-center">
-      <h1 class="text-lg font-bold">Mentions légales</h1>
-      <p class="text-lg">
-        Page en construction, revenez plus tard.
-        <br />
-        En attendant, vous pouvez consulter nos services.
-      </p>
-      <div class="mx-auto mt-4 flex w-fit items-center gap-4">
-        <a
-          href="/services/entreprises"
-          class="rounded-full border border-primary px-4 py-1 text-primary duration-200 hover:bg-primary hover:text-white"
-          >Services pour les entreprises</a
-        >
-        <a
-          href="/services/particuliers"
-          class="rounded-full border border-primary px-4 py-1 text-primary duration-200 hover:bg-primary hover:text-white"
-          >Services pour les particuliers</a
-        >
+    <div class="container">
+      <h1 class="mb-8 text-xl font-bold lg:mb-12">Mentions légales</h1>
+      <div class="mb-8 lg:mb-12">
+        <h2>Informations légales</h2>
+        <p>
+          Conformément aux dispositions des articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la Confiance
+          dans l'Économie Numérique (LCEN), nous portons à la connaissance des utilisateurs et visiteurs du site <a
+            href="/">pepsconsult.fr</a
+          > les informations suivantes :
+        </p>
+      </div>
+      <div class="mb-8 lg:mb-12">
+        <h2>Éditeur du site</h2>
+        <ul>
+          <li>Raison sociale : <span class="font-medium">PEP'S CONSULT</span></li>
+          <li>Forme juridique : Société par actions simplifiée (SASU)</li>
+          <li>Capital social : 1 500,00 Euros</li>
+          <li>Siège social : 25 Rue du Maréchal Foch, 78000 Versailles</li>
+          <li>Numéro SIRET : 933 697 013 00013</li>
+          <li>Immatriculation au RCS : Versailles, numéro 933 697 013 R.C.S. Versailles</li>
+          <li>Directeur de la publication : Nada BITAR (Présidente)</li>
+          <li>Contact : {globals.email}</li>
+          <li>Téléphone : {globals.phone}</li>
+        </ul>
+      </div>
+      <div class="mb-8 lg:mb-12">
+        <h2>Hébergeur du site</h2>
+        <p>Le site <a href="/">pepsconsult.fr</a> est hébergé par :</p>
+        <ul>
+          <li>Nom de l’hébergeur : OVH SAS</li>
+          <li>Adresse : 2 rue Kellermann, 59100 Roubaix, France</li>
+          <li>Téléphone : +33 9 72 10 10 07</li>
+          <li>Site web : <a href="www.ovhcloud.com" target="_blank">www.ovhcloud.com</a></li>
+        </ul>
+      </div>
+      <div class="mb-8 lg:mb-12">
+        <h2>Propriété intellectuelle</h2>
+        <p>
+          L'ensemble du contenu présent sur le site <a href="/">pepsconsult.fr</a>, incluant, de manière non limitative,
+          les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi que leur mise en forme
+          sont la propriété exclusive de <span class="font-medium">PEP'S CONSULT</span> à l'exception des marques, logos ou contenus appartenant à
+          d'autres sociétés partenaires ou auteurs.
+        </p>
+      </div>
+      <div class="mb-8 lg:mb-12">
+        <h2>Responsabilité</h2>
+        <p>
+          <span class="font-medium">PEP'S CONSULT</span> s'efforce de fournir sur le site <a href="/">pepsconsult.fr</a> des informations aussi précises que
+          possible. Toutefois, elle ne pourra être tenue responsable des omissions, des inexactitudes et des carences dans
+          la mise à jour, qu'elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.
+        </p>
+      </div>
+      <div class="mb-8 lg:mb-12">
+        <h2>Données personnelles</h2>
+        <p>Aucunes donnée personnelle n'est recueillie sur le site <a href="/">pepsconsult.fr</a>.</p>
+      </div>
+      <div class="mb-8 lg:mb-12">
+        <h2>Cookies</h2>
+        <p>Le site <a href="/">pepsconsult.fr</a> n'utilise pas de cookie.</p>
+      </div>
+      <div class="mb-8 lg:mb-12">
+        <h2>Litiges</h2>
+        <p>
+          Tout litige en relation avec l’utilisation du site <a href="/">pepsconsult.fr</a> est soumis au droit français.
+          Il est fait attribution exclusive de juridiction aux tribunaux compétents de Versailles.
+        </p>
+      </div>
+      <div class="mb-8 lg:mb-12">
+        <h2>Crédits</h2>
+        <h3>Design : <a href="azer">Julien Mercier</a></h3>
+        <h3>Developpement : <a href="maximefontenay.fr" target="_blank">Maxime Fontenay</a></h3>
       </div>
     </div>
   </section>
 </DefaultLayout>
+
+<style lang="scss">
+  a {
+    @apply font-semibold text-primary underline duration-150 ease-in hover:text-tertiary;
+  }
+  h2 {
+    @apply mb-2 text-lg font-bold text-primary;
+  }
+</style>
