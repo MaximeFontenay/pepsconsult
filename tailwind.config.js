@@ -24,6 +24,9 @@ module.exports = {
         satoshi: ['Satoshi', 'Poppins', 'sans-serif'],
         poppins: ['Poppins', 'Satoshi', 'sans-serif'],
       },
+      screens: {
+        waves: '500px',
+      },
     },
     container: {
       center: true,

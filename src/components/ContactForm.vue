@@ -15,7 +15,7 @@
     </div>
 
     <button type="submit" class="bg-primary text-white text-base font-medium md:text-lg flx-center gap-3 ml-auto
-      px-6 py-2 rounded-2xl focus:outline-none focus:ring-2 focus:ring-offset-2">
+      px-6 py-2 rounded-2xl focus:outline-none focus:ring-2 focus:ring-offset-2 hover:bg-tertiary">
       <p>Envoyer</p>
       <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -35,7 +35,7 @@ import { ref } from "vue";
 
 const submittedForm = ref(false);
 
-const WEB3FORMS_ACCESS_KEY = "a2aee534-584d-4faa-92d4-bbc115070869";
+const WEB3FORMS_ACCESS_KEY = "e0a986c3-04de-40c4-8614-80173f675d5a";
 const name = ref("")
 const email = ref("")
 const message = ref("")

@@ -6,16 +6,16 @@ import DefaultLayout from '../layouts/DefaultLayout.astro'
 <DefaultLayout title="Contact">
   <section class="container my-12 grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-16">
     <div class="flex w-full flex-col gap-8">
-      <h1 class="text-lg font-bold text-primary lg:text-2xl">Me contacter</h1>
+      <h1 class="page-title">Me contacter</h1>
       <ContactForm client:only="vue" />
     </div>
 
     <div class="col-span-2 flex w-full flex-col gap-8">
-      <h2 class="text-lg font-bold text-primary lg:text-2xl">Prendre un rendez-vous</h2>
-      <div
-        class="calendly-inline-widget min-h-[70svh] lg:min-h-[700px]"
-        data-url="https://calendly.com/exizef/30min?primary_color=ff0000"
-      >
+      <h2 class="page-title">Prendre un rendez-vous</h2>
+      <div 
+        class="calendly-inline-widget min-h-[70svh] lg:min-h-[700px]" 
+        data-url="https://calendly.com/nada-bitar-pepsconsult/30min?primary_color=0089dc" 
+        style="min-width:320px;height:700px;">
       </div>
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </div>

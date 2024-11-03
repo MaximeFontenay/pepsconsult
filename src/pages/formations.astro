@@ -1,9 +1,10 @@
 ---
 import { Image } from 'astro:assets'
 import imageFranceTravail from '../assets/images/formations/france_travail.png'
-import imageMCF from '../assets/images/formations/mcf.png'
+// import imageMCF from '../assets/images/formations/mcf.png'
 import imageOpco from '../assets/images/formations/opco.png'
 import qualiopi from '../assets/images/formations/qualiopi.png'
+import WavesDesktop3 from '../components/waves/WavesDesktop3.astro'
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 
 const partners = [
@@ -15,16 +16,16 @@ const partners = [
     alt: 'Partenaire - France Travail',
     image: imageFranceTravail,
   },
-  {
-    alt: 'Partenaire - Mon Compte Formation',
-    image: imageMCF,
-  },
+  // {
+  //   alt: 'Partenaire - Mon Compte Formation',
+  //   image: imageMCF,
+  // },
 ]
 ---
 
 <DefaultLayout title="Formations">
   <section class="container relative my-12 flex flex-col items-center justify-center">
-    <h1 class="mb-10 w-full text-lg font-bold md:mb-6 md:text-2xl">Mes formations</h1>
+    <h1 class="page-title">Mes formations</h1>
 
     <div class="flex w-full items-start justify-between gap-6 text-base max-lg:flex-col">
       <div class="flex flex-col gap-6">
@@ -63,11 +64,11 @@ const partners = [
     <div class="mt-10 grid w-full grid-cols-1 items-stretch gap-6 max-md:flex-col lg:mt-16 lg:grid-cols-3">
       {
         partners.map((partner) => (
-          <article class="flex w-full items-center justify-center rounded-2xl border border-primary bg-light p-6 lg:p-10">
+          <article class="flex w-full items-center justify-center rounded-2xl border border-primary bg-white p-6 max-h-[150px]">
             <Image
               src={partner.image}
               alt={partner.alt}
-              class="w-full max-lg:max-h-[100px] lg:max-w-[522px]"
+              class="w-full h-full"
               draggable="false"
             />
           </article>
@@ -75,4 +76,7 @@ const partners = [
       }
     </div>
   </section>
+  <div class="pointer-events-none absolute left-0 w-full scale-[5] lg:scale-[1.1] -z-10 top-[10vh] opacity-50">
+    <WavesDesktop3 />
+  </div>
 </DefaultLayout>

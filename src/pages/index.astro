@@ -3,6 +3,8 @@ import { DotLottieVue } from '@lottiefiles/dotlottie-vue'
 import { Image } from 'astro:assets'
 import imageService from '../assets/images/homepage/services.png'
 import ButtonMain from '../components/ButtonMain.astro'
+import WavesDesktop from '../components/waves/WavesDesktop.astro'
+import WavesMobile from '../components/waves/WavesMobile.astro'
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 
 const solutions = [
@@ -49,21 +51,23 @@ const testimonials = [
 ---
 
 <DefaultLayout title="Home">
-  <section class="container relative my-12 flex flex-col items-center justify-center">
+  <section class="container relative my-12 min-h-[60vh] lg:min-h-[50vh] flex flex-col items-center justify-center">
     <h1 class="mb-10 text-2xl font-bold md:mb-6 lg:text-3xl xl:text-4xl">Pep’s Consult</h1>
     <p class="text-center text-base font-medium lg:text-lg">
       Votre <span class="text-primary">réussite</span> commence ici, des formations <span class="text-primary"
         >sur mesure</span
       > pour chaque ambition.
     </p>
-    <ButtonMain text="Prendre rendez-vous" href="/contact" class="mt-20 md:mt-10" />
-  </section>
-  <!-- <div class="pointer-events-none absolute left-0 top-1/4 -z-50 m-auto w-[180vw] max-w-none -translate-x-1/2">
-    <div class="">
-      <WavesDesktopSvg/>
+    <ButtonMain text="Prendre rendez-vous" href="/contact" class="mt-20 md:mt-10 h-10 md:h-[60px] md:px-10" />
+    <div class="hidden waves:block pointer-events-none absolute left-0 w-full scale-[3] sm:scale-150 md:scale-110 lg:scale-125 xl:scale-150 opacity-50 -z-10 top-[10vh]">
+        <WavesDesktop/>
     </div>
-  </div> -->
-  <section class="container relative my-12 mt-28 flex flex-col items-center justify-center lg:mt-48">
+    <div class="waves:hidden pointer-events-none absolute left-0 w-full scale-[2.2] -z-10 top-[10vh] opacity-50">
+        <WavesMobile/>
+    </div>
+  </section>
+
+  <section class="container relative my-12 mt-28 flex flex-col items-center justify-center lg:mt-60">
     <h2 class="mb-10 mr-auto w-full max-w-[868px] text-lg font-bold md:text-xl xl:text-2xl">
       Des solutions adaptées pour chaque étape de votre parcours
     </h2>

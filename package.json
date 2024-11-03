@@ -11,26 +11,26 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^3.1.6",
+    "@astrojs/mdx": "^3.1.8",
     "@astrojs/partytown": "^2.1.2",
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/tailwind": "^5.1.2",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "accessible-astro-components": "^2.3.6",
-    "astro": "^4.15.6",
-    "astro-compress": "^2.3.1",
-    "eslint": "^8.57.0",
+    "astro": "^4.16.5",
+    "astro-compress": "^2.3.3",
+    "eslint": "^8.57.1",
     "eslint-plugin-astro": "^0.23.0",
     "eslint-plugin-jsx-a11y": "^6.10.0",
     "prettier": "^2.8.8",
     "prettier-plugin-astro": "^0.8.1",
     "prettier-plugin-tailwindcss": "^0.2.8",
-    "sass": "^1.78.0",
-    "tailwindcss": "^3.4.11"
+    "sass": "^1.80.1",
+    "tailwindcss": "^3.4.14"
   },
   "dependencies": {
-    "@astrojs/vue": "^4.5.1",
-    "@lottiefiles/dotlottie-vue": "^0.4.15",
-    "vue": "^3.5.8"
+    "@astrojs/vue": "^4.5.2",
+    "@lottiefiles/dotlottie-vue": "^0.4.16",
+    "vue": "^3.5.12"
   }
 }

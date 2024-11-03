@@ -4,6 +4,7 @@ import IconBulb from '../../../assets/images/services/ampoule.png'
 import IconBrain from '../../../assets/images/services/cerveau.png'
 import IconDiscuss from '../../../assets/images/services/discussion.png'
 import IconBook from '../../../assets/images/services/livre-ouvert.png'
+import WavesDesktop2 from '../../../components/waves/WavesDesktop2.astro'
 import DefaultLayout from '../../../layouts/DefaultLayout.astro'
 
 const cards = [
@@ -46,22 +47,26 @@ const cards = [
 ---
 
 <DefaultLayout title="Services pour les particuliers">
-  <section class="container my-12">
-    <h1 class="text-lg font-bold text-primary lg:text-2xl">Nos services pour les particuliers&nbsp;:</h1>
+  <section class="services-pages container my-12">
+    <h1 class="page-title">Nos services pour les particuliers&nbsp;:</h1>
 
-    <div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 xl:mt-16 xl:grid-cols-3">
+    <div class="card-grid">
       {
         cards.map((card) => (
           <a
             href={card.link}
-            class="flex flex-col items-center gap-3 rounded-2xl border border-primary p-6 text-center lg:gap-6"
+            class="card"
           >
-            <Image class="size-14 lg:size-20" src={card.icon} alt={card.title} draggable="false" />
-            <h2 class="text-md font-bold text-primary lg:text-lg">{card.title}</h2>
+            <Image class="image" src={card.icon} alt={card.title} draggable="false" />
+            <h2 class="title">{card.title}</h2>
             <p>{card.description}</p>
           </a>
         ))
       }
     </div>
   </section>
+
+  <div class="pointer-events-none absolute left-0 w-full scale-[5] lg:scale-[1.1] -z-10 top-[10vh] opacity-50">
+    <WavesDesktop2 />
+  </div>
 </DefaultLayout>
