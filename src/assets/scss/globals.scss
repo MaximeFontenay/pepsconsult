@@ -71,6 +71,12 @@ img {
   @apply mb-10 w-full text-lg font-bold text-primary md:mb-6 md:text-2xl;
 }
 
+.services-page {
+  b {
+    @apply text-primary;
+  }
+}
+
 .services-pages {
   .card-grid {
     @apply mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 xl:mt-16 xl:grid-cols-3;
