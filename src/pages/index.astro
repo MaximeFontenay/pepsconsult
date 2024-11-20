@@ -25,45 +25,89 @@ const solutions = [
   },
 ]
 
-const testimonials = [
+const testimonialsRow1 = [
   {
-    name: 'Jean-baptiste Dupont',
+    name: 'Cécilia B-T',
     rating: 5,
-    title: 'Je recommande vivement !',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    title: 'PROXI - Présidente',
+    content: `Je retiendrais l'action "coup de poing" de formation management des Directeurs que tu avais brillamment animée 🙂, et tant d'autres projets...
+      Encore merci pour ton dynamisme et ta bonne humeur; « <b>Pep's Consult</b> » te va bien !! Je te souhaite le meilleur ! `,
   },
   {
-    name: 'Jean-baptiste Dupont',
+    name: 'Florence W',
     rating: 5,
-    title: 'Je recommande vivement !',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    title: 'Particulier',
+    content: `Je n’oublierais jamais les heures de formation avec toi, ton sourire et ta gentillesse sans relâche à chaque formation !! 
+      <br>Merci d’avoir égayé ma vie professionnelle ...`,
   },
   {
-    name: 'Jean-baptiste Dupont',
+    name: 'Jalal A',
     rating: 5,
-    title: 'Je recommande vivement !',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    title: 'ARAMCO - Stratégie Développement',
+    content: `J’ai eu le plaisir de travailler avec toi pour promouvoir la formation et le coaching des équipes Argedis.
+      <br>Au nom de l’équipe Campus et de l’équipe NMM, merci beaucoup pour le travail accompli et pour ta collaboration. Bonne chance 😊.`,
+  },
+  {
+    name: 'Renaud C',
+    rating: 5,
+    title: 'TOTALENERGIES - Directeur',
+    content: `Je tiens à te remercier pour les différentes formations effectuées avec toi… Ce fut un plaisir.
+      J’en retiens ta disponibilité ta bienveillance ton partage de connaissance et surtout ta gentillesse.
+      Pour tout cela un grand MERCI 😉`,
+  },
+]
+
+const testimonialsRow2 = [
+  {
+    name: 'Nicolas C',
+    rating: 5,
+    title: 'Formateur',
+    content: `J'ai eu la chance 😉 de suivre la formation de formateur dispensée par <b>Pep's Consult</b>. 
+      L’expertise de Nada, sa maîtrise et connaissance de l’exercice permet d’être très vite à l’aise lors de l’animation des sessions. 
+      Son accompagnement, notamment au niveau de l’explication des guides d’animation, permet de comprendre le découpage et l’objectif de chaque formation. 
+      Nada donne également des trucs et astuces afin de garder attentif son auditoire tout au long d’une journée de formation. 
+      Ses feedbacks permettent également de s’améliorer au fur et à mesure des animations.
+      Elle sait également s’appuyer sur les points forts de ses formateurs, et leur donne également la liberté de pouvoir mettre leur patte dans l’animation. 
+      Comme pour ses stagiaires, Nada met également les formateurs en situation en leur permettant d’animer leur formation « à blanc » et elle joue le rôle des apprenants. 
+      Ce qui permet d’anticiper les questions que peuvent poser ces derniers, et d’être opérationnel le jour J.
+      <br>Je ne saurai que conseiller <b>Pep's Consult</b> pour votre projet de devenir Formateur.`,
+  },
+  {
+    name: 'Anne Catherine L',
+    rating: 5,
+    title: 'Particulier',
+    content: `Je partage avec plaisir que tes formations, Nada, sont structurées donc structurantes avec des documents de synthèse... 
+      Top ! Ton accompagnement nous rassure, à l’écoute de nos questionnements. 
+      J’ai ainsi réussi à écrire mon mémoire sur le commerce et d’être efficace devant le jury à l’oral.
+      Cela m’a permis d’obtenir ma VAE sans faille. Un grand Merci je n’oublierais jamais nos échanges 😉`,
+  },
+  {
+    name: 'Nathalie R',
+    rating: 5,
+    title: 'Particulier',
+    content: `Dans un moment de doute, lors d’une prise de décision sur ma carrière, Nada, tu m’as aidé à clarifier mon objectif et me mettre de nouveau en action. 
+      Nous avons mis en forme mon CV et travaillé sur l’entretien d’embauche. Chaque étape me redonnait à mesure que l’on avançait une grande confiance en moi ! 
+      Milles merci 😉 pour ton écoute et ta bienveillance… Un bel accompagnement je recommande `,
   },
 ]
 ---
 
 <DefaultLayout title="Accueil">
-  <section class="container relative my-12 min-h-[60vh] lg:min-h-[50vh] flex flex-col items-center justify-center">
+  <section class="container relative my-12 flex min-h-[60vh] flex-col items-center justify-center lg:min-h-[50vh]">
     <h1 class="mb-10 text-2xl font-bold md:mb-6 lg:text-3xl xl:text-4xl">Pep’s Consult</h1>
     <p class="text-center text-base font-medium lg:text-lg">
       Votre <span class="text-primary">réussite</span> commence ici, des formations <span class="text-primary"
         >sur mesure</span
       > pour chaque ambition.
     </p>
-    <ButtonMain text="Prendre rendez-vous" href="/contact" class="mt-20 md:mt-10 h-10 md:h-[60px] md:px-10" />
-    <div class="hidden waves:block pointer-events-none absolute left-0 w-full scale-[3] sm:scale-150 md:scale-110 lg:scale-125 xl:scale-150 opacity-50 -z-10 top-[10vh]">
-        <WavesDesktop/>
+    <ButtonMain text="Prendre rendez-vous" href="/contact" class="mt-20 h-10 md:mt-10 md:h-[60px] md:px-10" />
+    <div
+      class="pointer-events-none absolute left-0 top-[10vh] -z-10 hidden w-full scale-[3] opacity-50 waves:block sm:scale-150 md:scale-110 lg:scale-125 xl:scale-150"
+    >
+      <WavesDesktop />
     </div>
-    <div class="waves:hidden pointer-events-none absolute left-0 w-full scale-[2.2] -z-10 top-[10vh] opacity-50">
-        <WavesMobile/>
+    <div class="pointer-events-none absolute left-0 top-[10vh] -z-10 w-full scale-[2.2] opacity-50 waves:hidden">
+      <WavesMobile />
     </div>
   </section>
 
@@ -71,11 +115,17 @@ const testimonials = [
     <h2 class="mb-10 mr-auto w-full max-w-[868px] text-lg font-bold md:text-xl xl:text-2xl">
       Des solutions adaptées pour chaque étape de votre parcours
     </h2>
-    <div class="flex items-stretch w-full justify-center gap-12 lg:gap-24 max-md:flex-col">
+    <div class="flex w-full items-stretch justify-center gap-12 max-md:flex-col lg:gap-24">
       {
         solutions.map((solution) => (
           <a href={solution.link} class="flex flex-col items-center justify-end gap-4 lg:gap-6">
-            <DotLottieVue client:load class="size-[300px] md:size-[200px] lg:size-[250px] xl:size-[350px]" autoplay loop src={solution.lottiePath} />
+            <DotLottieVue
+              client:load
+              class="size-[300px] md:size-[200px] lg:size-[250px] xl:size-[350px]"
+              autoplay
+              loop
+              src={solution.lottiePath}
+            />
             <h3 class="text-lg font-bold text-primary">{solution.title}</h3>
           </a>
         ))
@@ -95,31 +145,34 @@ const testimonials = [
             Avec une solide expérience en ingénierie de formation, coaching, et formation de formateurs, je vous apporte
             un <b>savoir-faire</b> éprouvé pour <b>transformer vos défis en opportunités de croissance</b>.
           </p>
-        </article> 
+        </article>
         <article>
           <h3 class="font-satoshi font-bold text-primary">Une Approche sur Mesure :</h3>
           <p>
-            Chaque projet est unique. Je conçois des <b>solutions pédagogiques adaptées à vos besoins spécifiques</b>, en
-            utilisant des méthodes innovantes comme la ludopédagogie et les outils pédagogiques interactifs pour
+            Chaque projet est unique. Je conçois des <b>solutions pédagogiques adaptées à vos besoins spécifiques</b>,
+            en utilisant des méthodes innovantes comme la ludopédagogie et les outils pédagogiques interactifs pour
             maximiser l'engagement et l'<b>efficacité de vos formations</b>.
           </p>
         </article>
         <article>
           <h3 class="font-satoshi font-bold text-primary">Une Vision Innovante :</h3>
           <p>
-            Je suis constamment à l'affût des dernières tendances en <b>formation et pédagogie</b>. Que ce soit pour reformater
-            vos <b>formations existantes ou créer de nouveaux programmes</b>, je mets un point d'honneur à intégrer les
+            Je suis constamment à l'affût des dernières tendances en <b>formation et pédagogie</b>. Que ce soit pour
+            reformater vos <b>formations existantes ou créer de nouveaux programmes</b>, je mets un point d'honneur à
+            intégrer les
             <b>meilleures pratiques pour des résultats concrets</b>.
           </p>
         </article>
         <article>
           <h3 class="font-satoshi font-bold text-primary">Un Engagement Total :</h3>
           <p>
-            Votre réussite est ma priorité. Je m'investis pleinement dans <b>chaque projet</b>, en mettant à votre service mon
-            écoute, ma réactivité, et mon <b>accompagnement personnalisé</b> pour vous garantir une expérience enrichissante et
-            des résultats durables.
+            Votre réussite est ma priorité. Je m'investis pleinement dans <b>chaque projet</b>, en mettant à votre
+            service mon écoute, ma réactivité, et mon <b>accompagnement personnalisé</b> pour vous garantir une expérience
+            enrichissante et des résultats durables.
             <br /> Choisir de travailler avec moi, c'est opter pour une partenaire dédiée à l'amélioration continue de vos
-            compétences et de vos outils pédagogiques. <b>Ensemble, nous bâtirons des formations qui font la différence</b>.
+            compétences et de vos outils pédagogiques. <b
+              >Ensemble, nous bâtirons des formations qui font la différence</b
+            >.
           </p>
         </article>
       </div>
@@ -128,30 +181,82 @@ const testimonials = [
       </div>
     </div>
   </section>
-  <section class="container relative my-12 mt-28 flex flex-col items-center justify-center lg:mt-48">
-    <h2 class="mb-10 mr-auto w-full max-w-[868px] text-lg font-bold md:text-xl xl:text-2xl">
-      La satisfaction de mes clients, ma plus grande réussite
-    </h2>
-    <div class="grid w-full grid-cols-1 gap-6 max-md:flex-col lg:grid-cols-3">
-      {
-        testimonials.map((testimonial) => (
-          <article class="flex w-full flex-col  justify-end gap-6 rounded-2xl border border-secondary p-6">
-            <h3 class="text-lg font-bold">{testimonial.name}</h3>
-            <div class="flex gap-1">
-              {Array.from({ length: testimonial.rating }).map((_, _i) => (
-                <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M11.0489 0.927049C11.3483 0.0057385 12.6517 0.00573993 12.9511 0.927051L14.9187 6.98278C15.0526 7.3948 15.4365 7.67376 15.8697 7.67376H22.2371C23.2058 7.67376 23.6086 8.91338 22.8249 9.48278L17.6736 13.2254C17.3231 13.4801 17.1764 13.9314 17.3103 14.3435L19.2779 20.3992C19.5773 21.3205 18.5228 22.0866 17.7391 21.5172L12.5878 17.7746C12.2373 17.5199 11.7627 17.5199 11.4122 17.7746L6.2609 21.5172C5.47719 22.0866 4.42271 21.3205 4.72206 20.3992L6.68969 14.3435C6.82356 13.9314 6.6769 13.4801 6.32642 13.2254L1.17511 9.48278C0.391392 8.91338 0.794168 7.67376 1.76289 7.67376H8.13026C8.56349 7.67376 8.94744 7.3948 9.08132 6.98278L11.0489 0.927049Z"
-                    fill="#4147B9"
-                  />
-                </svg>
-              ))}
-            </div>
-            <h4 class="font-satoshi text-lg font-bold">{testimonial.title}</h4>
-            <p class="text-base">{testimonial.content}</p>
-          </article>
-        ))
-      }
+  <section class="relative my-12 mt-28 flex flex-col items-center justify-center lg:mt-48">
+    <div class="container">
+      <h2 class=" mb-10 ml-0 mr-auto w-full max-w-[868px] text-lg font-bold md:text-xl xl:text-2xl">
+        La satisfaction de mes clients, ma plus grande réussite
+      </h2>
     </div>
+
+    <div class="flex flex-col items-stretch max-w-full">
+      {[
+        { testimonials: testimonialsRow1, direction: "left" },
+        { testimonials: testimonialsRow2, direction: "right" },
+      ].map(({ testimonials, direction }) => (
+        <div class="testimonials" data-direction={direction} data-speed="slow">
+          <div class="testimonials-inner hide-scrollbar max-lg:items-stretch">
+            {testimonials.map((testimonial) => (
+              <article class="flex flex-col overflow-hidden rounded-2xl flex-1 min-w-[350px] lg:min-w-[600px] lg:min-h-fit lg:max-h-[700px] border-2 border-tertiary shadow-lg shadow-black/10 p-6">
+                <h3 class="text-lg font-bold">{testimonial.name}</h3>
+                <h4 class="font-satoshi text-lg font-bold">{testimonial.title}</h4>
+                <div class="my-3 flex gap-1">
+                  {Array.from({ length: testimonial.rating }).map((_, i) => (
+                    <svg
+                      width="24"
+                      height="22"
+                      viewBox="0 0 24 22"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.0489 0.927049C11.3483 0.0057385 12.6517 0.00573993 12.9511 0.927051L14.9187 6.98278C15.0526 7.3948 15.4365 7.67376 15.8697 7.67376H22.2371C23.2058 7.67376 23.6086 8.91338 22.8249 9.48278L17.6736 13.2254C17.3231 13.4801 17.1764 13.9314 17.3103 14.3435L19.2779 20.3992C19.5773 21.3205 18.5228 22.0866 17.7391 21.5172L12.5878 17.7746C12.2373 17.5199 11.7627 17.5199 11.4122 17.7746L6.2609 21.5172C5.47719 22.0866 4.42271 21.3205 4.72206 20.3992L6.68969 14.3435C6.82356 13.9314 6.6769 13.4801 6.32642 13.2254L1.17511 9.48278C0.391392 8.91338 0.794168 7.67376 1.76289 7.67376H8.13026C8.56349 7.67376 8.94744 7.3948 9.08132 6.98278L11.0489 0.927049Z"
+                        fill="#F5D70E"
+                      />
+                    </svg>
+                  ))}
+                </div>
+                <p class="text-base max-lg:line-clamp-[10] overflow-hidden text-ellipsis" set:html={testimonial.content} />
+              </article>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="container">
+      <ButtonMain text="Prendre rendez-vous" href="/contact" class="w-fit mx-auto mt-20 h-10 md:mt-10 md:h-[60px] md:px-10" />
+    </div>
+
   </section>
 </DefaultLayout>
+
+<script defer>
+
+const scrollers = document.querySelectorAll(".testimonials");
+
+// If a user hasn't opted in for recuded motion, then we add the animation
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  addAnimation();
+}
+
+function addAnimation() {
+  scrollers.forEach((scroller) => {
+    scroller.setAttribute("data-animated", true);
+
+    // Make an array from the elements within `.scroller-inner`
+    const scrollerInner = scroller.querySelector(".testimonials-inner");
+    const scrollerContent = Array.from(scrollerInner.children);
+
+    // For each item in the array, clone it
+    // add aria-hidden to it
+    // add it into the `.scroller-inner`
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute("aria-hidden", true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
+
+
+</script>

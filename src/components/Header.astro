@@ -141,46 +141,46 @@ import WavesMobile from '../components/waves/WavesMobile.astro'
 
 <script defer>
 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('loaded')
-  const container = document.querySelector('#col-project_0');
+// document.addEventListener('DOMContentLoaded', () => {
+//   console.log('loaded')
+//   const container = document.querySelector('#col-project_0');
                   
-  let startY;
-  let startX;
-  let scrollLeft;
-  let scrollTop;
-  let isDown;
+//   let startY;
+//   let startX;
+//   let scrollLeft;
+//   let scrollTop;
+//   let isDown;
 
-  container.addEventListener('mousedown',e => mouseIsDown(e));  
-  container.addEventListener('mouseup',e => mouseUp(e))
-  container.addEventListener('mouseleave',e=>mouseLeave(e));
-  container.addEventListener('mousemove',e=>mouseMove(e));
+//   container.addEventListener('mousedown',e => mouseIsDown(e));  
+//   container.addEventListener('mouseup',e => mouseUp(e))
+//   container.addEventListener('mouseleave',e=>mouseLeave(e));
+//   container.addEventListener('mousemove',e=>mouseMove(e));
 
-  function mouseIsDown(e){
-    isDown = true;
-    startY = e.pageY - container.offsetTop;
-    startX = e.pageX - container.offsetLeft;
-    scrollLeft = container.scrollLeft;
-    scrollTop = container.scrollTop; 
-  }
-  function mouseUp(e){
-    isDown = false;
-  }
-  function mouseLeave(e){
-    isDown = false;
-  }
-  function mouseMove(e){
-    if(isDown){
-      e.preventDefault();
-      const y = e.pageY - container.offsetTop;
-      const walkY = y - startY;
-      container.scrollTop = scrollTop - walkY;
-      const x = e.pageX - container.offsetLeft;
-      const walkX = x - startX;
-      container.scrollLeft = scrollLeft - walkX;
-    }
-  };
-});
+//   function mouseIsDown(e){
+//     isDown = true;
+//     startY = e.pageY - container.offsetTop;
+//     startX = e.pageX - container.offsetLeft;
+//     scrollLeft = container.scrollLeft;
+//     scrollTop = container.scrollTop; 
+//   }
+//   function mouseUp(e){
+//     isDown = false;
+//   }
+//   function mouseLeave(e){
+//     isDown = false;
+//   }
+//   function mouseMove(e){
+//     if(isDown){
+//       e.preventDefault();
+//       const y = e.pageY - container.offsetTop;
+//       const walkY = y - startY;
+//       container.scrollTop = scrollTop - walkY;
+//       const x = e.pageX - container.offsetLeft;
+//       const walkX = x - startX;
+//       container.scrollLeft = scrollLeft - walkX;
+//     }
+//   };
+// });
 
 </script>
 
