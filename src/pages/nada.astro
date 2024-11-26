@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import illustration from '../assets/images/about/illustration.png'
+import illustration from '../assets/images/about/profile-picture-4.jpg'
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 ---
 
@@ -8,7 +8,7 @@ import DefaultLayout from '../layouts/DefaultLayout.astro'
   <section class="container relative my-12 flex flex-col items-center justify-center">
     <h1 class="page-title">Qui suis-je ?</h1>
 
-    <div class="flex w-full items-start justify-between gap-6 max-lg:flex-col">
+    <div class="flex w-full items-start justify-between gap-6 lg:gap-20 max-lg:flex-col">
       <p class="text-base">
         Passionnée par l'art de transmettre et de transformer les compétences, je suis Nada Bitar, 
         <b>spécialiste en formation, coaching, et ingénierie de formation</b>. Avec une solide expérience dans la formation de formateurs et
@@ -22,9 +22,11 @@ import DefaultLayout from '../layouts/DefaultLayout.astro'
         <br />
         Ensemble, donnons un nouveau souffle à la formation pour qu'elle devienne un véritable levier de réussite et d'épanouissement.
       </p>
-      <h2 class="text-md font-bold lg:hidden">Nada Bitar, Fondatrice</h2>
-      <Image src={illustration} alt="Nada Bitar illustration" class="w-full lg:max-w-[522px]" draggable="false" />
+      <div class="flex flex-col justify-center items-center lg:w-full lg:max-w-[522px] overflow-hidden mx-auto">
+        <Image src={illustration} alt="Portrait de Nada Bitar" class="w-full h-full max-h-[50vh] lg:max-h-[522px] object-left-top object-contain" draggable="false" />
+        <h2 class="mt-2 w-full text-left text-md font-bold">Nada Bitar, Fondatrice</h2>
+      </figure>
+    
     </div>
-    <h2 class="mt-10 w-full text-left text-md font-bold max-lg:hidden">Nada Bitar, Fondatrice</h2>
   </section>
 </DefaultLayout>
