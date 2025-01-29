@@ -1,9 +1,8 @@
 ---
-import { Image } from 'astro:assets'
 import imageFranceTravail from '../assets/images/formations/france_travail.png'
 // import imageMCF from '../assets/images/formations/mcf.png'
 import imageOpco from '../assets/images/formations/opco.png'
-import qualiopi from '../assets/images/formations/qualiopi.png'
+import ButtonMain from '../components/ButtonMain.astro'
 import WavesDesktop3 from '../components/waves/wavesDesktop3.astro'
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 
@@ -27,56 +26,47 @@ const partners = [
   <section class="container relative my-12 flex flex-col items-center justify-center">
     <h1 class="page-title">Mes formations</h1>
 
-    <div class="flex w-full items-start justify-between gap-6 text-base max-lg:flex-col">
+    <div class=" w-full items-start justify-between gap-6 text-base flex flex-col lg:grid lg:grid-cols-2">
       <div class="flex flex-col gap-6">
         <p class="">
-          <span class="font-medium">Certification QUALIOPI :</span> Des Formations Finançables pour Tous J’ai récemment obtenu
-          la certification QUALIOPI, garantissant que mes formations répondent aux standards de qualité exigés. Grâce à cette
-          certification, mes formations sont désormais finançables par plusieurs dispositifs :
+          <span class="font-medium">Domaine HYGIENE :</span>
+
+          <ul class="flex list-disc flex-col gap-2 pl-8">
+            <li>La règlementation</li>
+            <li>Les différents dangers</li>
+            <li>Les bonnes pratiques</li>
+            <li>La méthode HACCP, le plan de maitrise sanitaIre</li>
+            <li>Les points de vigilance aux étapes de la fabrication</li>
+            <li>La traçabilité et la gestion des produits non-conforme</li>
+            <li>La gestion d’une T.I.A.C</li>
+          </ul>
         </p>
 
-        <ul class="flex list-disc flex-col gap-4 pl-8">
-          <!-- <li><span class="font-medium">CPF :</span> Pour les particuliers et formateurs</li> -->
-          <li>
-            <span class="font-medium">France Travail :</span> Pour accompagner la montée en compétences des particuliers
-            et formateurs
-          </li>
-          <li>
-            <span class="font-medium">OPCO :</span> Pour soutenir les entreprises dans le développement des compétences de
-            leurs équipes
-          </li>
-        </ul>
+        <a
+          class="font-medium underline-offset-4 underline flex items-center gap-2 fill-primary text-primary hover:fill-tertiary hover:text-tertiary"
+          href="/documents/pepsconsult-programme-maitriser-la-securite-des-aliments-dans-mon-commerce.pdf"
+          target="_blank"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-inherit"
+            ><path
+              d="M8.267 14.68c-.184 0-.308.018-.372.036v1.178c.076.018.171.023.302.023.479 0 .774-.242.774-.651 0-.366-.254-.586-.704-.586zm3.487.012c-.2 0-.33.018-.407.036v2.61c.077.018.201.018.313.018.817.006 1.349-.444 1.349-1.396.006-.83-.479-1.268-1.255-1.268z"
+            ></path><path
+              d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM9.498 16.19c-.309.29-.765.42-1.296.42a2.23 2.23 0 0 1-.308-.018v1.426H7v-3.936A7.558 7.558 0 0 1 8.219 14c.557 0 .953.106 1.22.319.254.202.426.533.426.923-.001.392-.131.723-.367.948zm3.807 1.355c-.42.349-1.059.515-1.84.515-.468 0-.799-.03-1.024-.06v-3.917A7.947 7.947 0 0 1 11.66 14c.757 0 1.249.136 1.633.426.415.308.675.799.675 1.504 0 .763-.279 1.29-.663 1.615zM17 14.77h-1.532v.911H16.9v.734h-1.432v1.604h-.906V14.03H17v.74zM14 9h-1V4l5 5h-4z"
+            ></path></svg
+          >
+          <span>Découvrir la fiche programme détaillé</span>
+        </a>
 
-        <p class="">
-          Cette certification vous offre de nouvelles opportunités pour accéder à des formations de qualité, tout en
-          bénéficiant d’un financement adapté à vos besoins.
-        </p>
       </div>
-
-      <Image
-        src={qualiopi}
-        alt="Certification Qualiopi"
-        class="w-full max-lg:max-h-[300px] lg:max-w-[522px]"
-        draggable="false"
-      />
-    </div>
-
-    <div class="mt-10 grid w-full grid-cols-1 items-stretch gap-6 max-md:flex-col lg:mt-16 lg:grid-cols-3">
-      {
-        partners.map((partner) => (
-          <article class="flex w-full items-center justify-center rounded-2xl border border-primary bg-white p-6 max-h-[150px]">
-            <Image
-              src={partner.image}
-              alt={partner.alt}
-              class="w-full h-full"
-              draggable="false"
-            />
-          </article>
-        ))
-      }
+        <div class="flex flex-col gap-6 ">
+          <h2 class="font-medium text-balance text-center">
+            📌 Contactez-nous dès aujourd'hui pour découvrir comment nous pouvons transformer vos projets en réussite !
+          </h2>
+          <ButtonMain text="Prendre rendez-vous" href="/contact" class="mx-auto w-fit" />
+        </div>
     </div>
   </section>
-  <div class="pointer-events-none absolute left-0 w-full scale-[5] lg:scale-[1.1] -z-10 top-[10vh] opacity-50">
+  <div class="pointer-events-none absolute left-0 top-[10vh] -z-10 w-full scale-[5] opacity-50 lg:scale-[1.1]">
     <WavesDesktop3 />
   </div>
 </DefaultLayout>

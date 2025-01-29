@@ -1,0 +1,82 @@
+---
+import { Image } from 'astro:assets'
+import imageFranceTravail from '../assets/images/formations/france_travail.png'
+// import imageMCF from '../assets/images/formations/mcf.png'
+import imageOpco from '../assets/images/formations/opco.png'
+import qualiopi from '../assets/images/formations/qualiopi.png'
+import WavesDesktop3 from '../components/waves/wavesDesktop3.astro'
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+
+const partners = [
+  {
+    alt: 'Partenaire - Opco',
+    image: imageOpco,
+  },
+  {
+    alt: 'Partenaire - France Travail',
+    image: imageFranceTravail,
+  },
+  // {
+  //   alt: 'Partenaire - Mon Compte Formation',
+  //   image: imageMCF,
+  // },
+]
+---
+
+<DefaultLayout title="Formations">
+  <section class="container relative my-12 flex flex-col items-center justify-center">
+    <h1 class="page-title">Mes formations</h1>
+
+    <div class="flex w-full items-start justify-between gap-6 text-base max-lg:flex-col">
+      <div class="flex flex-col gap-6">
+        <p class="">
+          <span class="font-medium">Certification QUALIOPI :</span> Des Formations Finançables pour Tous J’ai récemment obtenu
+          la certification QUALIOPI, garantissant que mes formations répondent aux standards de qualité exigés. Grâce à cette
+          certification, mes formations sont désormais finançables par plusieurs dispositifs :
+        </p>
+
+        <ul class="flex list-disc flex-col gap-4 pl-8">
+          <!-- <li><span class="font-medium">CPF :</span> Pour les particuliers et formateurs</li> -->
+          <li>
+            <span class="font-medium">France Travail :</span> Pour accompagner la montée en compétences des particuliers
+            et formateurs
+          </li>
+          <li>
+            <span class="font-medium">OPCO :</span> Pour soutenir les entreprises dans le développement des compétences de
+            leurs équipes
+          </li>
+        </ul>
+
+        <p class="">
+          Cette certification vous offre de nouvelles opportunités pour accéder à des formations de qualité, tout en
+          bénéficiant d’un financement adapté à vos besoins.
+        </p>
+      </div>
+
+      <Image
+        src={qualiopi}
+        alt="Certification Qualiopi"
+        class="w-full max-lg:max-h-[300px] lg:max-w-[522px]"
+        draggable="false"
+      />
+    </div>
+
+    <div class="mt-10 grid w-full grid-cols-1 items-stretch gap-6 max-md:flex-col lg:mt-16 lg:grid-cols-3">
+      {
+        partners.map((partner) => (
+          <article class="flex w-full items-center justify-center rounded-2xl border border-primary bg-white p-6 max-h-[150px]">
+            <Image
+              src={partner.image}
+              alt={partner.alt}
+              class="w-full h-full"
+              draggable="false"
+            />
+          </article>
+        ))
+      }
+    </div>
+  </section>
+  <div class="pointer-events-none absolute left-0 w-full scale-[5] lg:scale-[1.1] -z-10 top-[10vh] opacity-50">
+    <WavesDesktop3 />
+  </div>
+</DefaultLayout>
