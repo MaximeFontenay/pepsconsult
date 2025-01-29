@@ -26,21 +26,19 @@ const partners = [
   <section class="container relative my-12 flex flex-col items-center justify-center">
     <h1 class="page-title">Mes formations</h1>
 
-    <div class=" w-full items-start justify-between gap-6 text-base flex flex-col lg:grid lg:grid-cols-2">
+    <div class=" w-full items-start justify-between text-base flex flex-col gap-12 lg:gap-6 lg:grid lg:grid-cols-2">
       <div class="flex flex-col gap-6">
-        <p class="">
-          <span class="font-medium">Domaine HYGIENE :</span>
+        <h2 class="font-medium text-md">Domaine HYGIENE :</h2>
 
-          <ul class="flex list-disc flex-col gap-2 pl-8">
-            <li>La règlementation</li>
-            <li>Les différents dangers</li>
-            <li>Les bonnes pratiques</li>
-            <li>La méthode HACCP, le plan de maitrise sanitaIre</li>
-            <li>Les points de vigilance aux étapes de la fabrication</li>
-            <li>La traçabilité et la gestion des produits non-conforme</li>
-            <li>La gestion d’une T.I.A.C</li>
-          </ul>
-        </p>
+        <ul class="flex list-disc flex-col gap-2 pl-8">
+          <li>La règlementation</li>
+          <li>Les différents dangers</li>
+          <li>Les bonnes pratiques</li>
+          <li>La méthode HACCP, le plan de maitrise sanitaIre</li>
+          <li>Les points de vigilance aux étapes de la fabrication</li>
+          <li>La traçabilité et la gestion des produits non-conforme</li>
+          <li>La gestion d’une T.I.A.C</li>
+        </ul>
 
         <a
           class="font-medium underline-offset-4 underline flex items-center gap-2 fill-primary text-primary hover:fill-tertiary hover:text-tertiary"
@@ -58,12 +56,12 @@ const partners = [
         </a>
 
       </div>
-        <div class="flex flex-col gap-6 ">
-          <h2 class="font-medium text-balance text-center">
-            📌 Contactez-nous dès aujourd'hui pour découvrir comment nous pouvons transformer vos projets en réussite !
-          </h2>
-          <ButtonMain text="Prendre rendez-vous" href="/contact" class="mx-auto w-fit" />
-        </div>
+      <div class="flex flex-col gap-6">
+        <h2 class="text-md font-medium text-balance text-center">
+          📌 Contactez-nous dès aujourd'hui pour découvrir comment nous pouvons transformer vos projets en réussite !
+        </h2>
+        <ButtonMain text="Prendre rendez-vous" href="/contact" class="mx-auto w-fit" />
+      </div>
     </div>
   </section>
   <div class="pointer-events-none absolute left-0 top-[10vh] -z-10 w-full scale-[5] opacity-50 lg:scale-[1.1]">
