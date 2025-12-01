@@ -1,0 +1,123 @@
+---
+interface Props {
+  type: 'organization' | 'service' | 'breadcrumbs' | 'localbusiness'
+  data?: any
+}
+
+const { type, data = {} } = Astro.props
+
+const generateOrganizationSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": ["Organization", "EducationalOrganization"],
+  "name": "Pep's Consult",
+  "legalName": "SASU PEP'S CONSULT",
+  "url": "https://www.pepsconsult.fr",
+  "logo": "https://www.pepsconsult.fr/assets/images/logo.png",
+  "description": "Organisme de formation certifié Qualiopi spécialisé en ingénierie pédagogique, formation de formateurs et coaching professionnel",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "25 rue du Maréchal Foch",
+    "addressLocality": "Versailles",
+    "postalCode": "78000",
+    "addressCountry": "FR"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "nada.bitar@pepsconsult.fr",
+    "telephone": "+33749376221",
+    "contactType": "customer service",
+    "availableLanguage": "French"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Nada Bitar",
+    "email": "nada.bitar@pepsconsult.fr"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/nada-bitar-049300a8/",
+    "https://api.whatsapp.com/send/?phone=%2B33749376221&text&type=phone_number&app_absent=0"
+  ],
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "certification",
+    "name": "Certification Qualiopi",
+    "description": "Organisme de formation certifié Qualiopi"
+  }
+})
+
+const generateLocalBusinessSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Pep's Consult",
+  "image": "https://www.pepsconsult.fr/assets/images/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "25 rue du Maréchal Foch",
+    "addressLocality": "Versailles",
+    "postalCode": "78000",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "48.8049",
+    "longitude": "2.1310"
+  },
+  "url": "https://www.pepsconsult.fr",
+  "telephone": "+33749376221",
+  "email": "nada.bitar@pepsconsult.fr",
+  "priceRange": "$$",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/nada-bitar-049300a8/"
+  ]
+})
+
+const generateServiceSchema = (serviceData: any) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": serviceData.title,
+  "provider": {
+    "@type": "Organization",
+    "name": "Pep's Consult"
+  },
+  "description": serviceData.description || "",
+  "areaServed": {
+    "@type": "Country",
+    "name": "France"
+  }
+})
+
+const generateBreadcrumbsSchema = (breadcrumbs: any[]) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    "item": item.url
+  }))
+})
+
+let schema
+switch(type) {
+  case 'organization':
+    schema = generateOrganizationSchema()
+    break
+  case 'localbusiness':
+    schema = generateLocalBusinessSchema()
+    break
+  case 'service':
+    schema = generateServiceSchema(data)
+    break
+  case 'breadcrumbs':
+    schema = generateBreadcrumbsSchema(data)
+    break
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

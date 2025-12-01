@@ -4,6 +4,8 @@ import IlluFormationFormateur from '../../../assets/images/services/formation-fo
 import IlluIngenieurieFormation from '../../../assets/images/services/ingenierie-formation.svg'
 import IlluMiseANiveau from '../../../assets/images/services/mise-a-niveau.svg'
 import DefaultLayout from '../../../layouts/DefaultLayout.astro'
+import StructuredData from '../../../components/SEO/StructuredData.astro'
+import Breadcrumbs from '../../../components/SEO/Breadcrumbs.astro'
 
 const services = {
   'mise-a-niveau': {
@@ -80,10 +82,20 @@ if (!serviceData) {
 }
 
 const { title, description, image } = serviceData
+
+// Nettoyer la description HTML pour les meta tags
+const cleanDescription = description.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim().substring(0, 155)
 ---
 
-<DefaultLayout title={title}>
+<DefaultLayout title={title} description={cleanDescription}>
+  <StructuredData type="service" data={{ title, description: description.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim() }} />
   <section class="services-page container mt-12 mb-8 lg:my-12">
+    <Breadcrumbs
+      items={[
+        { name: 'Services Entreprises', url: 'https://www.pepsconsult.fr/services/entreprises/' },
+        { name: title, url: `https://www.pepsconsult.fr/services/entreprises/${service}/` }
+      ]}
+    />
     <a href="/services/entreprises" class="block size-6 lg:size-10">
       <svg
         class="size-full"

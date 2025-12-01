@@ -3,35 +3,65 @@ import '@astrojs/tailwind/base.css'
 import '../assets/scss/globals.scss'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
+import StructuredData from '../components/SEO/StructuredData.astro'
+
+interface Props {
+  title?: string
+  subtitle?: string
+  description?: string
+  url?: string
+  image?: string
+  author?: string
+  type?: 'website' | 'article'
+}
 
 const {
-  title = `Pep's consult`,
-  subtitle = `Pep's consult`,
-  description = `Pep's consult, formation et coaching pour les entreprises et les particuliers`,
-  url = 'https://www.pepconsult.fr',
+  title = "Pep's consult",
+  subtitle = 'Organisme de formation et coaching',
+  description = "Pep's consult, formation et coaching pour les entreprises et les particuliers. Ingénierie de formation, coaching professionnel et formations certifiées Qualiopi.",
+  url = Astro.url.href,
   image = '/social-preview-image.png',
-  author = 'Maxime Fontenay',
+  author = 'Nada Bitar',
+  type = 'website',
 } = Astro.props
 ---
 
-<html lang="fr">
+<html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://assets.calendly.com" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
 
     <meta name="title" content={`${title} - ${subtitle}`} />
     <meta name="description" content={description} />
     <meta name="author" content={author} />
 
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+
     <meta property="og:title" content={`${title} - ${subtitle}`} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
     <meta property="og:url" content={url} />
     <meta property="og:image" content={Astro.site ? `${Astro.site}${image}` : image} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Pep's Consult" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} - ${subtitle}`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={Astro.site ? `${Astro.site}${image}` : image} />
 
     <title>{title} - {subtitle}</title>
+
+    <StructuredData type="organization" />
   </head>
   <body class="relative flex min-h-svh flex-col overflow-x-clip px-4 font-satoshi text-xs md:text-base">
     <Header />

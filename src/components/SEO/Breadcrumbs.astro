@@ -1,0 +1,78 @@
+---
+import StructuredData from './StructuredData.astro'
+
+interface BreadcrumbItem {
+  name: string
+  url: string
+}
+
+interface Props {
+  items: BreadcrumbItem[]
+}
+
+const { items } = Astro.props
+
+const breadcrumbItems: BreadcrumbItem[] = [{ name: 'Accueil', url: 'https://www.pepsconsult.fr/' }, ...items]
+---
+
+<nav aria-label="Fil d'Ariane" class="breadcrumbs">
+  <ol class="breadcrumb-list">
+    {
+      breadcrumbItems.map((item, index) => (
+        <li class="breadcrumb-item">
+          {index < breadcrumbItems.length - 1 ? (
+            <>
+              <a href={item.url}>{item.name}</a>
+              <span class="separator" aria-hidden="true">
+                /
+              </span>
+            </>
+          ) : (
+            <span aria-current="page">{item.name}</span>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<StructuredData type="breadcrumbs" data={breadcrumbItems} />
+
+<style>
+  .breadcrumbs {
+    margin-bottom: 1rem;
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.875rem;
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb-item a {
+    color: #0089dc;
+    text-decoration: none;
+  }
+
+  .breadcrumb-item a:hover {
+    text-decoration: underline;
+  }
+
+  .breadcrumb-item span[aria-current] {
+    color: #666;
+  }
+
+  .separator {
+    color: #999;
+  }
+</style>

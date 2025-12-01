@@ -16,7 +16,18 @@ export default defineConfig({
     }),
     compress(),
     vue(),
-    sitemap(),
+    sitemap({
+      filter: (page) => !page.includes('formations%20copy'),
+      changefreq: 'yearly',
+      priority: 0.7,
+      lastmod: new Date(),
+      i18n: {
+        defaultLocale: 'fr',
+        locales: {
+          fr: 'fr-FR',
+        },
+      },
+    }),
     robotsTxt(),
   ],
   prefetch: {
