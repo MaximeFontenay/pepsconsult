@@ -12,7 +12,13 @@ interface Props {
 
 const { items } = Astro.props
 
-const breadcrumbItems: BreadcrumbItem[] = [{ name: 'Accueil', url: 'https://www.pepsconsult.fr/' }, ...items]
+const breadcrumbItems: BreadcrumbItem[] = [{ name: 'Accueil', url: '/' }, ...items]
+
+// Créer des URLs absolues pour le schema.org (nécessaire pour le SEO)
+const breadcrumbItemsForSchema = breadcrumbItems.map(item => ({
+  name: item.name,
+  url: new URL(item.url, Astro.site).href
+}))
 ---
 
 <nav aria-label="Fil d'Ariane" class="breadcrumbs">
@@ -36,7 +42,7 @@ const breadcrumbItems: BreadcrumbItem[] = [{ name: 'Accueil', url: 'https://www.
   </ol>
 </nav>
 
-<StructuredData type="breadcrumbs" data={breadcrumbItems} />
+<StructuredData type="breadcrumbs" data={breadcrumbItemsForSchema} />
 
 <style>
   .breadcrumbs {
